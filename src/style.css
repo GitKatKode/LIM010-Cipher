@@ -1,1 +1,12 @@
 /* Acá va tu código */
+
+body {
+    background-color: #128c7e;
+}
+
+#logo {
+    max-width: 10%;
+    height: auto;
+    margin-top: 10%;
+    margin-left: 45%;
+}
