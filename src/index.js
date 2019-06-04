@@ -12,24 +12,25 @@ const Back = () => {
     login.style.display = 'flex';
     tryAgain.style.display = 'none';
 };
-
+let acum = 3;
 const LoginBtn = () => {
     const password = document.getElementById('password').value;
     if (password === 'LABORATORIA') {
         kripto.style.display = 'flex';
         login.style.display = 'none';
-        // } else {
-        //     // let acum = 0;
-        //     // for (let i = 0; i < 3; i--) {
-        //     //     tryAgain.style.display = 'flex';
-        //     //     document.getElementById('try').innerHTML = `aaa`;
-        //     //     if (i === 0) {
-        //     //         forbidden.style.display = 'flex';
-        //     //     }
-        //     //     acum = i--;
-        // }
+    } else {
+        acum--;
+        if (acum > 0) {
+            tryAgain.style.display = 'flex';
+            login.style.display = 'none';
+            document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
+            document.getElementById('password').value = null;
+        } else {
+            forbidden.style.display = 'flex';
+            login.style.display = 'none';
+        }
     }
 }
 
-loginBtn.onclick = LoginBtn;
-returnBtn.onclick = Back;
+loginBtn.addEventListener('click', LoginBtn);
+returnBtn.addEventListener('click', Back);
