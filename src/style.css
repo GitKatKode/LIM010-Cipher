@@ -56,6 +56,11 @@ input {
     text-align: center;
 }
 
+#offset {
+    width: 10%;
+    height: 10%;
+}
+
 .row {
     display: flex;
     flex-direction: row;

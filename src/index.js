@@ -1,22 +1,22 @@
-const returnBtn = document.getElementById('return');
-const loginBtn = document.getElementById('login');
-const login = document.getElementById('section1');
-const tryAgain = document.getElementById('section2');
+const btnReturn = document.getElementById('return');
+const btnLogin = document.getElementById('login');
+const login = document.getElementById('sectionLogin');
+const tryAgain = document.getElementById('sectionTryAgain');
 tryAgain.style.display = 'none';
-const forbidden = document.getElementById('section3');
-forbidden.style.display = 'none';
-const kripto = document.getElementById('section4');
-kripto.style.display = 'none';
+const bloqued = document.getElementById('sectionBloqued');
+bloqued.style.display = 'none';
+const mainCipher = document.getElementById('sectionCipher');
+mainCipher.style.display = 'none';
 
-const Back = () => {
+const reTry = () => {
     login.style.display = 'flex';
     tryAgain.style.display = 'none';
 };
 let acum = 3;
-const LoginBtn = () => {
+const loginAccess = () => {
     const password = document.getElementById('password').value;
     if (password === 'LABORATORIA') {
-        kripto.style.display = 'flex';
+        mainCipher.style.display = 'flex';
         login.style.display = 'none';
     } else {
         acum--;
@@ -26,11 +26,35 @@ const LoginBtn = () => {
             document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
             document.getElementById('password').value = null;
         } else {
-            forbidden.style.display = 'flex';
+            bloqued.style.display = 'flex';
             login.style.display = 'none';
         }
     }
 }
 
-loginBtn.addEventListener('click', LoginBtn);
-returnBtn.addEventListener('click', Back);
+btnLogin.addEventListener('click', loginAccess);
+btnReturn.addEventListener('click', reTry);
+
+
+const cipherBtn = document.getElementById('cipher');
+const clearBtn = document.getElementById('clear');
+const decipherBtn = document.getElementById('decipher');
+
+const Clear = () => {
+    document.getElementById('text').value = '';
+    document.getElementById('offset').value = '';
+};
+
+clearBtn.addEventListener('click', Clear);
+
+cipherBtn.addEventListener('click', () => {
+    const tocode = document.getElementById('text').value.toUpperCase();
+    const code = parseInt(document.getElementById('offset').value);
+    document.getElementById('text').value = cipher.encode(code, tocode);
+});
+
+decipherBtn.addEventListener('click', () => {
+    const tocode = document.getElementById('text').value.toUpperCase();
+    const code = parseInt(document.getElementById('offset').value);
+    document.getElementById('text').value = cipher.decode(code, tocode);
+});

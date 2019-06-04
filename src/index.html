@@ -8,29 +8,31 @@
 </head>
 
 <body>
-    <header id="title1">KriptoWhatsapp</header>
+    <header>KriptoWhatsapp</header>
     <main>
-        <section id="section1">
+        <section id="sectionLogin">
             <img id="logo" src="..\img\logo.png" alt="logo">
             <label for="input">Ingrese su contraseña:</label>
             <input id="password" type="password">
             <button id="login">Ingresar</button>
         </section>
-        <section id="section2">
+        <section id="sectionTryAgain">
             <img id="logo" src="..\img\logo.png" alt="logo">
             <p>Contraseña Incorrecta</p>
             <p id="try"></p>
             <button id="return">Regresar</button>
         </section>
-        <section id="section3">
+        <section id="sectionBloqued">
             <img id="forbidden" src="..\img\forbidden.png" alt="logo">
-            <p>ACCESO BLOQUEADO</p>
+            <p>CONTRASEÑA INCORRECTA</p>
         </section>
-        <section id="section4">
+        <section id="sectionCipher">
+            <label for="offset">Ingresa tu clave:</label>
+            <input type="number" id="offset" name="offset">
             <input type="text" name="text" id="text" placeholder="Ingresa tu texto aquí">
             <div class="row">
                 <button id="cipher">Cifrar</button>
-                <button id="clean">Limpiar</button>
+                <button id="clear">Limpiar</button>
                 <button id="decipher">Descifrar</button>
             </div>
         </section>
