@@ -15,21 +15,21 @@ const reTry = () => {
 let acum = 3;
 const loginAccess = () => {
     const password = document.getElementById('password').value;
-    if (password === 'LABORATORIA') {
-        mainCipher.style.display = 'flex';
-        login.style.display = 'none';
-    } else {
+    while (!(password === 'LABORATORIA')) {
         acum--;
-        if (acum > 0) {
-            tryAgain.style.display = 'flex';
-            login.style.display = 'none';
-            document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
-            document.getElementById('password').value = null;
-        } else {
+        while (!(acum > 0)) {
             bloqued.style.display = 'flex';
             login.style.display = 'none';
+            break;
         }
+        tryAgain.style.display = 'flex';
+        login.style.display = 'none';
+        document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
+        document.getElementById('password').value = null;
+        break;
     }
+    mainCipher.style.display = 'flex';
+    login.style.display = 'none';
 }
 
 btnLogin.addEventListener('click', loginAccess);
@@ -58,3 +58,21 @@ decipherBtn.addEventListener('click', () => {
     const code = parseInt(document.getElementById('offset').value);
     document.getElementById('text').value = cipher.decode(code, tocode);
 });
+
+
+// const password = document.getElementById('password').value;
+//     if (password === 'LABORATORIA') {
+//         mainCipher.style.display = 'flex';
+//         login.style.display = 'none';
+//     } else {
+//         acum--;
+//         if (acum > 0) {
+//             tryAgain.style.display = 'flex';
+//             login.style.display = 'none';
+//             document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
+//             document.getElementById('password').value = null;
+//         } else {
+//             bloqued.style.display = 'flex';
+//             login.style.display = 'none';
+//         }
+//     }
