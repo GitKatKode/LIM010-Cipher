@@ -66,3 +66,7 @@ input {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.hide {
+    display: none;
+}

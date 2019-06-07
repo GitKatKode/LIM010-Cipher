@@ -2,15 +2,15 @@ const btnReturn = document.getElementById('return');
 const btnLogin = document.getElementById('login');
 const login = document.getElementById('sectionLogin');
 const tryAgain = document.getElementById('sectionTryAgain');
-tryAgain.style.display = 'none';
+tryAgain.classList.add('hide');
 const bloqued = document.getElementById('sectionBloqued');
-bloqued.style.display = 'none';
+bloqued.classList.add('hide');
 const mainCipher = document.getElementById('sectionCipher');
-mainCipher.style.display = 'none';
+mainCipher.classList.add('hide');
 
 const reTry = () => {
-    login.style.display = 'flex';
-    tryAgain.style.display = 'none';
+    login.classList.remove('hide');
+    tryAgain.classList.add('hide');
 };
 let acum = 3;
 const loginAccess = () => {
@@ -18,18 +18,18 @@ const loginAccess = () => {
     while (!(password === 'LABORATORIA')) {
         acum--;
         while (!(acum > 0)) {
-            bloqued.style.display = 'flex';
-            login.style.display = 'none';
+            bloqued.classList.remove('hide');
+            login.classList.add('hide');
             break;
         }
-        tryAgain.style.display = 'flex';
-        login.style.display = 'none';
+        tryAgain.classList.remove('hide');
+        login.classList.add('hide');
         document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
         document.getElementById('password').value = null;
         break;
     }
-    mainCipher.style.display = 'flex';
-    login.style.display = 'none';
+    mainCipher.classList.remove('hide');
+    login.classList.add('hide');
 }
 
 btnLogin.addEventListener('click', loginAccess);
@@ -58,21 +58,3 @@ decipherBtn.addEventListener('click', () => {
     const code = parseInt(document.getElementById('offset').value);
     document.getElementById('text').value = cipher.decode(code, tocode);
 });
-
-
-// const password = document.getElementById('password').value;
-//     if (password === 'LABORATORIA') {
-//         mainCipher.style.display = 'flex';
-//         login.style.display = 'none';
-//     } else {
-//         acum--;
-//         if (acum > 0) {
-//             tryAgain.style.display = 'flex';
-//             login.style.display = 'none';
-//             document.getElementById('try').innerHTML = `Te quedan ${acum} intentos`;
-//             document.getElementById('password').value = null;
-//         } else {
-//             bloqued.style.display = 'flex';
-//             login.style.display = 'none';
-//         }
-//     }
