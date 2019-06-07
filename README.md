@@ -12,7 +12,7 @@ El primer sketch que cumple con las funcionalidades básicas del producto, que s
 ![sketch-three](/img/3.jpg)
 
 Éste diseño muy simple fue enseguida hecho en [Balsamiq](https://balsamiq.cloud/s61sm4q/pagz1or/r2E4F?f=N4IgUiBcCMA0IDkpxAYWfAMhkAhHAsjgFo4DSUA2gLoC%2BQA%3D).
-![balsamiq](/img/balsamiq.jpg)
+![balsamiq](/img/balsamiq.png)
 
 Abrir demo  [KriptoWhatsapp](https://sabhublife.github.io/LIM010-Cipher/src/).
 
