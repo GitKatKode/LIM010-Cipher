@@ -7,16 +7,12 @@ window.cipher = {
             let encodedASCII;
             if (ASCII >= 32 && ASCII <= 254) {
                 encodedASCII = (ASCII - 32 + offset) % 222 + 32;
-                console.log('ASCII', ASCII, 'encodedASCII', encodedASCII, 'cod1', offset);
-
                 if (encodedASCII < 32) {
                     encodedASCII = (ASCII - 32 + offset) % 222 + 254;
-                    console.log('ASCII', ASCII, 'encodedASCII', encodedASCII, 'cod2', offset);
                 }
             }
             encoded += String.fromCharCode(encodedASCII);
         }
-        console.log('final encoded', encoded);
         return encoded;
     },
     decode: (offset, string) => {
@@ -27,16 +23,12 @@ window.cipher = {
             let decodedASCII;
             if (ASCII >= 32 && ASCII <= 254) {
                 decodedASCII = (ASCII - offset % 222 - 32) + 32;
-                console.log('ASCII', ASCII, 'decodedASCII', decodedASCII, 'decod1', offset);
-                if (decodedASCII < 32) {
+                if (decodedASCII >= 254) {
                     decodedASCII = (ASCII - offset % 222 - 254) + 32;
-                    console.log('ASCII', ASCII, 'decodedASCII', decodedASCII, 'decod2', offset);
                 }
             }
-
             decoded += String.fromCharCode(decodedASCII);
         }
-        console.log('final decoded', decoded);
         return decoded;
     },
 };
