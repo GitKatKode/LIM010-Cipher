@@ -12,14 +12,18 @@
     <main>
         <section id="sectionLogin">
             <img class="logo" src="..\img\logo.png" alt="logo">
-            <label for="input">Ingrese su contraseña:</label>
-            <input id="password" type="password">
+            <div id="loginInput">
+                <label for="input">Ingrese su contraseña:</label>
+                <input id="password" type="password">
+            </div>
             <button id="login">Ingresar</button>
         </section>
         <section id="sectionTryAgain">
             <img class="logo" src="..\img\logo.png" alt="logo">
-            <p>Contraseña Incorrecta</p>
-            <p id="try"></p>
+            <div id="tryAgain">
+                <p>Contraseña Incorrecta</p>
+                <p id="try"></p>
+            </div>
             <button id="return">Regresar</button>
         </section>
         <section id="sectionBloqued">
@@ -27,10 +31,10 @@
             <p>CONTRASEÑA INCORRECTA</p>
         </section>
         <section id="sectionCipher">
-            <label for="offset">Ingresa tu clave:</label>
-            <input type="number" id="offset" name="offset">
             <input type="text" name="text" id="text" placeholder="Ingresa tu texto aquí">
             <div>
+                <label for="offset">Ingresa tu clave:</label>
+                <input type="number" id="offset" name="offset">
                 <button class="btn2" id="cipher">Cifrar</button>
                 <button class="btn2" id="clear">Limpiar</button>
                 <button class="btn2" id="decipher">Descifrar</button>
