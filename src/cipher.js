@@ -4,9 +4,14 @@ window.cipher = {
         offset = parseInt(offset);
         for (let i = 0; i < string.length; i++) {
             const ASCII = string[i].charCodeAt();
+            let encodedASCII;
             if (ASCII >= 32 && ASCII <= 254) {
-                encoded += String.fromCharCode((ASCII - 32 + offset) % 222 + 32);
+                encodedASCII = (ASCII - 32 + offset) % 222 + 32;
+                if (encodedASCII < 32) {
+                    encodedASCII = (ASCII - 32 + offset) % 222 + 254;
+                }
             }
+            encoded += String.fromCharCode(encodedASCII);
         }
         return encoded;
     },
@@ -15,9 +20,15 @@ window.cipher = {
         offset = parseInt(offset);
         for (let i = 0; i < string.length; i++) {
             const ASCII = string[i].charCodeAt();
+            let decodedASCII;
             if (ASCII >= 32 && ASCII <= 254) {
-                decoded += String.fromCharCode((ASCII - offset % 222 - 32) + 32);
+                decodedASCII = (ASCII - offset % 222 - 32) + 32;
+                if (decodedASCII < 32) {
+                    decodedASCII = (ASCII - offset % 222 - 254) + 32;
+                }
             }
+
+            decoded += String.fromCharCode(decodedASCII);
         }
         return decoded;
     },
