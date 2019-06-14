@@ -37,6 +37,8 @@ Al tener el prototipo completo, se solicitó feedback sobre la apariencia, obten
  - Etiqueta del login más pequeña y pegada al input del password
  - Botones más grandes con letra más pequeña
  - Background al área del texto
+ - Botón limpiar como secundario
+ - Mejorar contraste a botones
 
  Abrir demo  [KriptoWhatsapp](https://sabhublife.github.io/LIM010-Cipher/src/).
 
