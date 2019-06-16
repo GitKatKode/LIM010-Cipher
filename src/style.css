@@ -1,3 +1,13 @@
+header {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 5%;
+    font-size: 44px;
+}
+
 body {
     margin-top: 9%;
     background-color: #128c7e;
@@ -50,13 +60,6 @@ section {
     height: 60%;
 }
 
-header {
-    font-size: 38px;
-    width: 100%;
-    text-align: center;
-    margin-top: 10%;
-}
-
 #password {
     background-color: #dcf8c6;
     border-radius: 12px;
@@ -80,12 +83,6 @@ button {
 #clear {
     border-radius: 50%;
     width: 60%;
-}
-
-footer {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 10%;
 }
 
 input {
@@ -123,12 +120,22 @@ input {
     display: none;
 }
 
+footer {
+    font-size: 15px;
+    text-align: center;
+}
+
+#katkode {
+    width: 2%;
+    height: 2%;
+}
+
 @media only screen and (min-width: 768px) {
     body {
-        font-size: 20px
+        font-size: 33px
     }
-    header {
-        font-size: 70px;
+    h1 {
+        font-size: 100px;
     }
     .logo {
         max-width: 70px;
@@ -138,16 +145,16 @@ input {
         border-radius: 115px;
         padding: 2%;
         width: 70%;
-        height: 100px;
+        height: 150px;
     }
     #text {
         width: 45%;
         height: 20vh;
     }
     #offset {
-        font-size: 19px
+        font-size: 29px;
     }
     footer {
-        font-size: 20px
+        font-size: 30px;
     }
 }
