@@ -27,11 +27,15 @@ describe('cipher', () => {
         });
 
         it('debería retornar "]_`" para "<>?" con offset 33', () => {
-            assert.equal(cipher.decode(33, '<>?'), ']_`');
+            assert.equal(cipher.encode(33, '<>?'), ']_`');
         });
 
         it('debería retornar "ò~ý" para "ÑáÜ" con offset 33', () => {
-            assert.equal(cipher.decode(33, 'ÑáÜ'), 'ò~ý');
+            assert.equal(cipher.encode(33, 'ÑáÜ'), 'ò~ý');
+        });
+
+        it('debería retornar "`" para ":" con offset -1', () => {
+            assert.equal(cipher.encode(-1, ':'), '`');
         });
     });
 
@@ -54,7 +58,7 @@ describe('cipher', () => {
         });
 
         it('debería retornar "()*+" para ")*+," con offset 33', () => {
-            assert.equal(cipher.decode(33, ')*+,'), '()*+)');
+            assert.equal(cipher.decode(33, ')*+,'), '()*+');
         });
 
         it('debería retornar "<>?" para "]_`" con offset 33', () => {
