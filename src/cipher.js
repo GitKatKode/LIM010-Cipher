@@ -30,12 +30,13 @@ window.cipher = {
                 if (encodedASCII < 58) {
                     encodedASCII = (offset + ASCII - 58) % 39 + 97;
                 }
-            } else if (ASCII >= 123 && ASCII <= 254) {
+            } else {
                 encodedASCII = (offset + ASCII - 123) % 132 + 123;
                 if (encodedASCII < 123) {
                     encodedASCII = (offset + ASCII - 123) % 132 + 255;
                 }
             }
+
             encoded += String.fromCharCode(encodedASCII);
         }
         return encoded;
